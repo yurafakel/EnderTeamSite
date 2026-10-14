@@ -1,74 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnderTeam</title>
+    <title>EnderTeam - Экосистема проектов</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/svg+xml" href="/img/Logo.svg">
 </head>
 <body>
     <header>
-        <img src="img/Logo.svg" alt="">
-        <div class="headerbtns">
+        <a href="#hero" class="logo-link">
+            <img src="img/Logo.svg" alt="EnderTeam Logo" class="nav-logo">
+        </a>
+        <nav class="headerbtns">
             <a href="#hero">Главная</a>
             <a href="#hp">Глав. проекты</a>
             <a href="#ab">Про ET</a>
             <a href="#a-p">Все проекты</a>
-        </div>
+        </nav>
     </header>
-    <div class="wrapper">
-        <div class="hero" id="hero">
-            <div class="boxhero">
-                <h2>EnderTeam – экосистема проектов от yurafakel</h2>
+
+    <main class="wrapper">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="boxhero text-content">
+                <h1>EnderTeam – экосистема проектов от yurafakel</h1>
+                <p></p>
+                <div class="hero-actions">
+                    <a href="#hp" class="btn btn-primary">Смотреть проекты</a>
+                    <a href="#ab" class="btn btn-secondary">О нас</a>
+                </div>
             </div>
-            <div class="boxhero"><img src="/img/Logo.svg" alt=""></div>
-        </div>
-        <div id="hp"></div>
-        <div class="headprojects">
-            <a class="box-headprojects" href="https://etismc.enderteam.com">
-                <img src="img/LogoETiSMC.svg" alt="">
-                <h2>ETiSMC<br>Minecraft</h2>
-            </a>
-            <a class="box-headprojects" href="#">
-                <img src="img/ET_LogoTG.jpg" alt="">
-                <h2>Telegram<br>EnderTeam</h2>
-            </a>
-            <a class="box-headprojects" href="#">
-                <img src="img/ET_LogoYT_YF.jpg" alt="">
-                <h2>YouTube<br>yurafakel</h2>
-            </a>
-        </div>
-        <div id="ab"></div>
-        <div class="about">
-            <h2>Про EnderTeam</h2>
-            <div class="about-text">
-                <h3>EnderTeam был создан в 2021 году, и сначала он был просто как название сервера Discord, но потом он перерос в нечто большее, а именно в экосистему ET. Под его экосистемой создано много проектов и некоторые из них объеденены.</h3>
+            <div class="boxhero img-content">
+                <div class="logo-glow-container">
+                    <img src="/img/Logo.svg" alt="EnderTeam Logo" class="hero-logo">
+                </div>
             </div>
-        </div>
-        <div id="a-p"></div>
-        <div class="all-projects">
-            <h4>Все проекты EnderTeam</h4>
+        </section>
+
+        <!-- Main Projects Section -->
+        <section id="hp" class="headprojects-section section-padding">
+            <h2 class="section-title">Главные проекты</h2>
+            <div class="headprojects">
+                <a class="box-headprojects" href="https://etismc.enderteam.com">
+                    <div class="project-img-wrapper">
+                        <img src="img/LogoETiSMC.svg" alt="ETiSMC">
+                    </div>
+                    <div class="project-info">
+                        <h3>ETiSMC</h3>
+                        <span>Minecraft Сервер</span>
+                    </div>
+                </a>
+                <a class="box-headprojects" href="https://t.me/ETiSMC" target="_blank" rel="noopener noreferrer">
+                    <div class="project-img-wrapper">
+                        <img src="img/ET_LogoTG.jpg" alt="Telegram">
+                    </div>
+                    <div class="project-info">
+                        <h3>Telegram</h3>
+                        <span>Канал EnderTeam</span>
+                    </div>
+                </a>
+                <a class="box-headprojects" href="#" target="_blank" rel="noopener noreferrer">
+                    <div class="project-img-wrapper">
+                        <img src="img/ET_LogoYT_YF.jpg" alt="YouTube">
+                    </div>
+                    <div class="project-info">
+                        <h3>YouTube</h3>
+                        <span>yurafakel</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="ab" class="about-section section-padding">
+            <div class="about-card">
+                <h2>Про EnderTeam</h2>
+                <div class="about-text">
+                    <p>EnderTeam был создан в 2021 году. Сначала это было просто название сервера в Discord, но со временем проект перерос в нечто большее — полноценную экосистему ET. В её рамках создано множество уникальных разработок, часть из которых тесно связана между собой.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Projects Section -->
+        <section id="a-p" class="all-projects-section section-padding">
+            <h2 class="section-title">Все проекты EnderTeam</h2>
             <div class="all-projects-container">
                 <div class="all-projects-box">
-                    <h2>MinePortalYF</h2>
-                    <h3>Первый серьёзный сервер по Minecraft в стиле игры Portal 2. (в данный момент сервер закрыт)</h3>
+                    <h3>MinePortalYF</h3>
+                    <p>Первый серьёзный сервер по Minecraft в стиле игры Portal 2. <i>(В данный момент закрыт)</i></p>
                 </div>
                 <div class="all-projects-box">
-                    <h2>Сайт EnderTeam</h2>
-                    <h3>Сайт про EnderTeam (вы сейчас на нём :3)</h3>
+                    <h3>Сайт EnderTeam</h3>
+                    <p>Официальный портал сообщества <i>(вы сейчас на нём :3)</i></p>
                 </div>
                 <div class="all-projects-box">
-                    <h2>EnderTraveler</h2>
-                    <h3>Пошаговая 2D RPG игра (проект приостановлен)</h3>
+                    <h3>EnderTraveler</h3>
+                    <p>Пошаговая 2D RPG игра. <i>(Проект приостановлен)</i></p>
                 </div>
                 <div class="all-projects-box">
-                    <h2>Кристалл Эндра</h2>
-                    <h3>Машинима (сериал), снятая в Minecraft с помощью сторонних инструментов. (Проект приостановлен)</h3>
+                    <h3>Кристалл Эндра</h3>
+                    <p>Машинима-сериал, снятая в Minecraft с помощью сторонних инструментов. <i>(Проект приостановлен)</i></p>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>EnderTeam, ETiSMC, сайт EnderTeam и ETiSMC – интеллектуальная собственность <b>yurafakel</b>.</p>
         </div>
-    </div>
-    <footer><h2>EnderTeam, ETiSMC, сайт EnderTeam и ETiSMC – интеллектуальная собственность yurafakel</h2></footer>
+    </footer>
 </body>
 </html>

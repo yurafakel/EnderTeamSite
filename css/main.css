@@ -1,73 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&display=swap');
 
-header {
-  position: sticky;
-  top: 10px;
-  width: calc(100% - 20px);
-  max-width: 1450px;
-  box-sizing: border-box;
-  margin: 10px auto 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 30px;
-  gap: 10px;
-
-  background: rgba(20, 10, 30, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-  z-index: 100;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-
-  overflow: hidden;
-  height: auto;
-}
-
-.headerbtns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  height: 100px;
-  width: 100%;
-  justify-content: space-around;
-  padding-left: 100px;
-
-  align-items: center;
-  min-width: 0;
-}
-
-header a {
-  font-family: "Unbounded", sans-serif;
-  font-weight: 400;
-  color: #fff;
-  font-style: normal;
-
-  font-size: clamp(10px, 3vw, 27px);
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-
-  white-space: nowrap;
-  transition: color 0.5s, transform 0.5s;
-}
-
-header a:hover {
-  color: yellow;
-  transform: scale(1.15);
-}
-
-header img {
-  max-height: 80px;
-  max-width: 100%;
-  height: auto;
-  display: block;
+:root {
+  --bg-gradient: linear-gradient(135deg, #2a0845 0%, #6441a5 50%, #20002c 100%);
+  --accent-color: #c084fc;
+  --accent-hover: #a855f7;
+  --highlight-yellow: #facc15;
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-main: #ffffff;
+  --text-muted: #d1d5db;
 }
 
 html {
@@ -75,320 +17,424 @@ html {
 }
 
 body {
-  background: linear-gradient(122deg, #520099, #b866ff);
-  background-repeat: no-repeat;
+  background: #120224;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
   min-height: 100vh;
   font-family: "Unbounded", sans-serif;
   font-weight: 400;
-  color: #fff;
-  font-style: normal;
-  font-size: clamp(12px, 1.5vw, 16px);
+  color: var(--text-main);
   margin: 0;
+  overflow-x: hidden;
 }
 
+/* Wrapper */
 .wrapper {
-  margin-left: 150px;
-  margin-right: 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 50px;
-  margin-top: 10px;
+.section-padding {
+  padding-top: 100px;
 }
 
-.boxhero img {
-  width: 400px;
-}
-
-.hero h2 {
-  font-size: clamp(32px, 5vw, 70px);
-}
-
-.o {
-  margin-bottom: 550px;
-}
-
-.headprojects {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 100px;
-  margin-top: 100px;
-  font-size: 30px;
+.section-title {
+  font-size: clamp(28px, 4vw, 48px);
   text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.box-headprojects h2 {
-  color: #fff;
-  text-decoration: none;
-}
-
-.headprojects a {
-  text-decoration: none;
-}
-
-.box-headprojects img {
-  width: 200px;
-  border-radius: 100px;
-  margin-top: 20px;
-  height: 200px;
-}
-
-/* Исправлена ошибка в синтаксисе border */
-.box-headprojects {
-  border: 8px solid rgba(0, 0, 0, 0.4);
-  background: rgba(20, 10, 30, 0.4);
+/* Header Navbar */
+header {
+  position: sticky;
+  top: 15px;
+  max-width: 1100px;
+  margin: 15px auto 0;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(18, 2, 36, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 40px;
-  min-width: 350px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s;
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  z-index: 1000;
+  box-shadow: var(--glass-shadow);
+}
+
+.nav-logo {
+  height: 45px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.headerbtns {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center; /* Центрируем ссылки внутри контейнера */
+  flex: 1; /* Занимаем всё доступное пространство между логотипом и кнопкой справа */
+  margin: 0 20px; /* Небольшие отступы по бокам */
+}
+
+header a {
+  color: var(--text-main);
+  font-size: clamp(12px, 1.2vw, 15px);
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+header a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+header a:hover {
+  color: var(--accent-color);
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  min-height: 70vh;
+}
+
+.hero .text-content {
+  flex: 1;
+}
+
+.hero .img-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-glow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5.5vw, 55px); /* Сделали текст крупнее */
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+.logo-glow-container::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--accent-color);
+  filter: blur(90px);
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero-logo {
+  width: 100% !important;
+  max-width: 400px !important; /* Принудительно увеличиваем максимальный размер */
+  min-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+  animation: float 4s ease-in-out infinite;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: #120224;
+  box-shadow: 0 4px 20px rgba(192, 132, 252, 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(192, 132, 252, 0.6);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  color: #fff;
+  border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.hero .img-content {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-glow-container {
+  position: relative;
+}
+
+.logo-glow-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background: var(--accent-color);
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Main Projects (Head Projects) */
+.headprojects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.box-headprojects {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 35px 25px;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  min-height: 443px;
+  text-align: center;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
 }
 
 .box-headprojects:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 15px 35px rgba(192, 132, 252, 0.2);
+}
+
+.project-img-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 3px solid var(--accent-color);
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-headprojects img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.box-headprojects:hover img {
   transform: scale(1.1);
 }
 
-.about h2 {
+.project-info h3 {
+  font-size: 22px;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.project-info span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* About Section */
+.about-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 50px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--glass-shadow);
   text-align: center;
-  font-size: 50px;
 }
 
-.about {
-  margin-top: 200px;
+.about-card h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-top: 0;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Убрано дублирование и исправлен border */
-.about {
-  border: 8px solid rgba(0, 0, 0, 0.4);
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 40px;
+.about-text p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
 }
 
-.about h3 {
-  margin: 50px;
-  font-size: 30px;
-}
-
+/* All Projects Section */
 .all-projects-container {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
 }
 
 .all-projects-box {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 300px;
-  border: 4px solid rgba(0, 0, 0, 0.4);
-  background: rgba(0, 0, 0, 0.4);
-  min-height: 300px;
-  gap: 10px;
-  border-radius: 40px;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.all-projects-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(192, 132, 252, 0.4);
 }
 
 .all-projects-box h3 {
-  font-size: 17px;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: 18px;
+  margin: 0;
+  color: var(--highlight-yellow);
 }
 
-.all-projects-box h2 {
-  margin-top: 50px;
+.all-projects-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
-.all-projects h4 {
-  font-size: 50px;
+/* Footer */
+footer {
+  margin-top: 100px;
+  background: rgba(10, 1, 20, 0.9);
+  border-top: 1px solid var(--glass-border);
+  padding: 30px 20px;
   text-align: center;
 }
 
-.all-projects {
-  margin-top: 200px;
+.footer-content p {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 0;
 }
 
-footer {
-  width: 100%;
-  height: 100px;
-  background-color: #000;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-}
-
-
-/* --- Адаптив для планшетов и телефонов --- */
-
-
-@media (max-width: 1024px) {
-  .wrapper {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-
+/* Responsive Adaptive */
+@media (max-width: 900px) {
   header {
-    width: calc(100% - 10px);
-    border-radius: 50px; /* чуть меньше скругление */
-  }
-
-  .headerbtns {
-    padding-left: 30px;
-    justify-content: center; /* центрируем кнопки */
-  }
-}
-
-/* Телефоны (до 768px): компактная шапка, кнопки в одну колонку при необходимости */
-@media (max-width: 1080px) {
-  .wrapper {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  header {
-    width: 100%;
-    border-radius: 20px;
-    padding: 10px 15px;
-    flex-direction: column; /* логотип и кнопки друг под другом */
-    align-items: stretch;
-  }
-
-  header img {
-    max-height: 60px;
-    margin: 0 auto 10px;
-  }
-
-  .headerbtns {
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    height: auto; /* убираем жёсткую высоту */
-    gap: 15px;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 20px;
   }
 
-  header a {
-    font-size: clamp(14px, 4vw, 22px); /* чуть крупнее на мобильных */
-    white-space: normal; /* разрешаем перенос текста в кнопке */
-    text-align: center;
+  .headerbtns {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
 
   .hero {
     flex-direction: column;
     text-align: center;
+    padding-top: 60px;
   }
 
-  .boxhero img {
-    width: 100%;
-    max-width: 300px;
-    min-width: 150px;
+  .hero-actions {
+    justify-content: center;
   }
 
-  .headprojects {
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 100px;
-    align-items: center;
-    transform: scale(1.0);
-  }
-
-  .box-headprojects {
-    min-width: 100%;
-    width: calc(100% - 40px); /* с отступом по краям */
-    box-sizing: border-box;
-  }
-
-  .about, .all-projects {
-    margin-top: 100px;
-  }
-
-  .all-projects-box {
-    width: 100%;
-    min-height: 250px;
+  .about-card {
+    padding: 30px 20px;
   }
 }
 
-/* Очень маленькие экраны (до 480px): ещё компактнее, убираем лишние отступы */
-@media (max-width: 730px) {
-  header {
-    padding: 8px 10px;
-  }
-
+@media (max-width: 480px) {
   .headerbtns {
     gap: 10px;
   }
 
   header a {
-    font-size: clamp(13px, 5vw, 18px);
-  }
-
-  .hero h2 {
-    font-size: clamp(24px, 6vw, 40px);
-  }
-
-  .o {
-    margin-bottom: 300px;
-  }
-
-  .headprojects {
-    font-size: 22px;
-  }
-
-  .box-headprojects img {
-    width: 160px;
-    height: 160px;
-  }
-
-  footer {
-    height: 70px;
-  }
-
-  footer h2 {
     font-size: 11px;
-  }
-
-  .all-projects h4{
-    font-size: 30px;
-  }
-
-  .about h2 {
-    font-size: 30px;
-  }
-
-  .about h3 {
-    font-size: 20px;
-  }
-
-  .all-projects-container{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .all-projects-box{
-    width: 250px;
-  }
-}
-
-@media (max-width: 1450px) {
-  .headprojects{
-    transform: scale(0.9);
-  }
-  .wrapper{
-    margin: 0;
-  }
-}
-
-@media (max-width: 1240px) {
-  .headprojects{
-    transform: scale(0.7);
   }
 }
